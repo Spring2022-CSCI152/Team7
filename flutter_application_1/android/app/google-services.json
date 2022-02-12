@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "15298368232",
+    "project_id": "mepo-1bb10",
+    "storage_bucket": "mepo-1bb10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15298368232:android:4605f431170ec9bf662f5d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15298368232-cslcj5u3cehs8fbdmgg67uko5d4divqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABOtCh8iBVXFqi7ulVUhJ7kn0Jmwzx-mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15298368232-cslcj5u3cehs8fbdmgg67uko5d4divqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
