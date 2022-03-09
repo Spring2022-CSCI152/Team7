@@ -8,6 +8,7 @@ import 'package:flutter_application_1/responsive/responsive_layout_screen.dart';
 import 'package:flutter_application_1/responsive/web_screen_layout.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
 import 'package:flutter_application_1/screens/signup_screen.dart';
+import 'package:flutter_application_1/screens/home_screen.dart';
 import 'package:flutter_application_1/utils/colors.dart';
 import 'package:provider/provider.dart';
 
@@ -72,7 +73,7 @@ class MyApp extends StatelessWidget {
                 ),
               );
             }
-            return LoginScreen();
+            return HomeScreen();
           },
         ),
       ),
