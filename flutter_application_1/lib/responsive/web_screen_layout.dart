@@ -12,6 +12,7 @@ class WebScreenLayout extends StatelessWidget {
       body: Container(
         color: Colors.blue,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Container(
             //   color: Color.fromARGB(171, 18, 100, 100),
