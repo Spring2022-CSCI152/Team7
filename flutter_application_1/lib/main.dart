@@ -11,7 +11,9 @@ import 'package:flutter_application_1/screens/signup_screen.dart';
 import 'package:flutter_application_1/utils/colors.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
+import './screens/profile_screen.dart';
+
+/*void main() async {
   WidgetsFlutterBinding
       .ensureInitialized(); //makes sure flutter loads before firebase
   if (kIsWeb) {
@@ -29,6 +31,11 @@ void main() async {
   }
   runApp(const MyApp());
 }
+*/
+
+void main() {
+  runApp(const MyApp()); 
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -36,7 +43,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
+    /*return MultiProvider(
       providers: [
         ChangeNotifierProvider(
           create: (_) => UserProvider(),
@@ -76,6 +83,9 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
+    ); */
+    return MaterialApp(
+      home: ProfilePage(),
     );
   }
 }
