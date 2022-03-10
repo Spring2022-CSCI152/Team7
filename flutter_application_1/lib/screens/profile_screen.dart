@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -31,6 +33,26 @@ class _ProfilePageState extends State<ProfilePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            CircleAvatar(
+              backgroundColor: Colors.black,
+              radius: 120,
+              child: CircleAvatar(
+                backgroundImage: AssetImage('/images/head.jpg'),
+                radius: 110,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Name",
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
             Container(
                 width: 0.5 * MediaQuery.of(context).size.width,
                 child: TextField(
