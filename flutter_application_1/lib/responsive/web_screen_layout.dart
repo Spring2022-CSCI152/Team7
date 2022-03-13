@@ -10,22 +10,10 @@ class WebScreenLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.blue,
+        color: webBackgroundColor,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Container(
-            //   color: Color.fromARGB(171, 18, 100, 100),
-            //   child: Column(
-            //     children: [
-            //       SvgPicture.asset(
-            //         'assets/logo.svg',
-            //         color: homeColor,
-            //         height: 64,
-            //       ),
-            //       Text('This is web'),
-            //     ],
-            //   ),
-            // ),
             Column(
               children: [
                 Container(
@@ -62,29 +50,41 @@ class WebScreenLayout extends StatelessWidget {
                                       Container(
                                         margin: EdgeInsets.all(20),
                                         padding: EdgeInsets.all(10),
-                                        color:
-                                            Color.fromARGB(146, 68, 137, 255),
-                                        child: LikeButton(),
+                                        color: blueColor,
+                                        child: LikeButton(
+                                            onTap: () {},
+                                            buttonText: 'Like',
+                                            buttonW: 10.0),
                                       ),
                                       Container(
                                         margin:
                                             EdgeInsets.fromLTRB(0, 20, 20, 20),
                                         padding: EdgeInsets.all(10),
-                                        color:
-                                            Color.fromARGB(146, 68, 137, 255),
-                                        child: CommentButton(),
+                                        color: blueColor,
+                                        child: CommentButton(
+                                            onTap: () {
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) =>
+                                                    AlertDialog(
+                                                  title: Text('Comment'),
+                                                ),
+                                              );
+                                            },
+                                            buttonText: 'Comment',
+                                            buttonW: 10.0),
                                       ),
                                       Spacer(),
                                       Container(
                                         margin: EdgeInsets.all(20),
                                         //padding: EdgeInsets.all(10),
-                                        color:
-                                            Color.fromARGB(146, 68, 137, 255),
-                                        child: SettingsButton(),
+                                        color: blueColor,
+                                        child: SettingsButton(onTap: () {}),
                                       ),
                                     ],
                                   ),
                                 ),
+                                //Text Body of the Post
                                 Container(
                                   height: 150,
                                   padding: EdgeInsets.all(10),

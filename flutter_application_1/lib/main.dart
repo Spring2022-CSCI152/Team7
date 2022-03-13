@@ -85,8 +85,6 @@ class MyApp extends StatelessWidget {
     //     ),
     //   ),
     // );
-    return MaterialApp(
-      home: WebScreenLayout(),
-    );
+    return MaterialApp(home: HomeScreen());
   }
 }

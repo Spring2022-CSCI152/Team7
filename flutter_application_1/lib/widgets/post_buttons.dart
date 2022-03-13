@@ -2,66 +2,85 @@ import 'package:flutter/material.dart';
 
 //Like Button
 class LikeButton extends StatelessWidget {
-  const LikeButton({Key? key}) : super(key: key);
+  LikeButton(
+      {required this.onTap,
+      required this.buttonText,
+      this.buttonColor,
+      required this.buttonW,
+      Key? key})
+      : super(key: key);
+
+  String buttonText;
+  Color? buttonColor;
+  VoidCallback onTap;
+  double buttonW;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        primary: Colors.black,
+        primary: buttonColor ?? Colors.black,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Icon(Icons.favorite_outline),
-          SizedBox(width: 10.0),
-          Text('Like'),
+          SizedBox(width: buttonW),
+          Text(buttonText),
         ],
       ),
-      onPressed: () {},
+      onPressed: onTap,
     );
   }
 }
 
 //Comment Button
 class CommentButton extends StatelessWidget {
-  const CommentButton({Key? key}) : super(key: key);
+  CommentButton(
+      {required this.onTap,
+      required this.buttonText,
+      this.borderRadius,
+      this.buttonColor,
+      required this.buttonW,
+      Key? key})
+      : super(key: key);
+
+  String buttonText;
+  Color? buttonColor;
+  VoidCallback onTap;
+  double? borderRadius;
+  double buttonW;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        primary: Colors.black,
+        primary: buttonColor ?? Colors.black,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Icon(Icons.comment_outlined),
-          SizedBox(width: 10.0),
-          Text('Comment'),
+          SizedBox(width: buttonW),
+          Text(buttonText),
         ],
       ),
-      onPressed: () {
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text('Comments'),
-          ),
-        );
-      },
+      onPressed: onTap,
     );
   }
 }
 
 //Settings Button
 class SettingsButton extends StatelessWidget {
-  const SettingsButton({Key? key}) : super(key: key);
+  SettingsButton({required this.onTap, Key? key}) : super(key: key);
+
+  VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.more_vert),
-      onPressed: () {},
+      onPressed: onTap,
     );
   }
 }
