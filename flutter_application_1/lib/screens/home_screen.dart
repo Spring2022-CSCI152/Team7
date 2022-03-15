@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: WebScreenLayout(),
 /*
-//Trying to Make it scrollable but Code from WebScreenLayout is not allowing it.
+//Trying to Make it scrollable but Code from WebScreenLayout or ListView is not allowing it.
       body: Column(
         children: <Widget>[
           ListView.builder(
