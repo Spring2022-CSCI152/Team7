@@ -1,6 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/albums.dart';
+import 'package:flutter_application_1/utils/album_outline.dart';
+
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -60,7 +63,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       labelText: 'Search...', border: OutlineInputBorder()),
                 )),
             SizedBox(
-              height: 20,
+              height: 50,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
