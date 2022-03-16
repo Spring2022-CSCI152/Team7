@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-//Like Button
-class LikeButton extends StatelessWidget {
-  LikeButton(
+// Button
+class Button extends StatelessWidget {
+  Button(
       {required this.onTap,
       required this.buttonText,
       this.buttonColor,
