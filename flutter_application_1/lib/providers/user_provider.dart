@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/user.dart';
 import 'package:flutter_application_1/resources/auth_methods.dart';
 
+// import 'package:firebase_auth/firebase_auth.dart';
+
 class UserProvider with ChangeNotifier {
   final AuthMethods _authMethods = AuthMethods();
   User?
@@ -12,8 +14,8 @@ class UserProvider with ChangeNotifier {
   User get getUser => _user!;
 
   Future<void> refreshUser() async {
-    User user = await _authMethods.getUserDetails();
-    _user = user;
+    //User user = await _authMethods.getUserDetails();
+   // _user = user;
     notifyListeners();
   }
 }
