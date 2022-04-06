@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../utils/colors.dart';
 import '../widgets/post_buttons.dart';
+import 'package:flutter_application_1/widgets/post_buttons.dart';
 
 class WebScreenLayout extends StatelessWidget {
   const WebScreenLayout({Key? key}) : super(key: key);
@@ -20,10 +21,30 @@ class WebScreenLayout extends StatelessWidget {
                 children: [
                   Container(
                     width: 500.0,
+                    height: 40.0,
+                    color: Colors.black38,
+                    margin: EdgeInsets.only(top: 10.0),
+                    child: (Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.account_circle_outlined),
+                          color: Colors.white,
+                        ),
+                        Text(
+                          "User_Mepo",
+                          style: TextStyle(fontSize: 15, color: Colors.white),
+                        )
+                      ],
+                    )),
+                  ),
+                  Container(
+                    width: 500.0,
                     height: 600.0,
                     color: Colors.black38,
                     padding: EdgeInsets.all(25.0),
-                    margin: EdgeInsets.all(60.0),
+                    margin: EdgeInsets.only(
+                        top: 5.0, bottom: 60.0, left: 60.0, right: 60.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -100,7 +121,7 @@ class WebScreenLayout extends StatelessWidget {
                                               padding:
                                                   const EdgeInsets.all(10.0),
                                               child: Text(
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                                                "Hello. This is Memo a respository application that can keep all of your favorite memories and thoughts for the world to know. Stay tuned for the finished product.",
                                               ),
                                             ),
                                           ),

@@ -6,6 +6,7 @@ import 'package:flutter_application_1/providers/user_provider.dart';
 import 'package:flutter_application_1/responsive/mobile_screen_layout.dart';
 import 'package:flutter_application_1/responsive/responsive_layout_screen.dart';
 import 'package:flutter_application_1/responsive/web_screen_layout.dart';
+import 'package:flutter_application_1/screens/add_post_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
 import 'package:flutter_application_1/screens/signup_screen.dart';
 import 'package:flutter_application_1/screens/home_screen.dart';
@@ -85,6 +86,6 @@ class MyApp extends StatelessWidget {
     //     ),
     //   ),
     // );
-    return MaterialApp(home: HomeScreen());
+    return MaterialApp(home: AddPostScreen());
   }
 }
