@@ -5,9 +5,9 @@ import 'package:flutter_application_1/models/user.dart';
 import 'package:flutter_application_1/resources/auth_methods.dart';
 
 class UserProvider with ChangeNotifier {
+  final AuthMethods _authMethods = AuthMethods();
   User?
       _user; // underscore makes the variable private, prevent method call bugs
-  final AuthMethods _authMethods = AuthMethods();
 
   User get getUser => _user!;
 
