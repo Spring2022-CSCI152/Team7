@@ -61,7 +61,26 @@ class SettingsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.more_vert),
-      onPressed: () {},
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                TextButton(
+                  onPressed: () {},
+                  child: Text("Edit"),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text("Delete"),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
