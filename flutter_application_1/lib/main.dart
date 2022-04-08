@@ -10,6 +10,7 @@ import 'package:flutter_application_1/screens/add_post_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
 import 'package:flutter_application_1/screens/signup_screen.dart';
 import 'package:flutter_application_1/screens/home_screen.dart';
+import 'package:flutter_application_1/screens/web_add_post_screen.dart';
 import 'package:flutter_application_1/utils/colors.dart';
 import 'package:provider/provider.dart';
 //WebScreenLayout
@@ -86,6 +87,6 @@ class MyApp extends StatelessWidget {
     //     ),
     //   ),
     // );
-    return MaterialApp(home: AddPostScreen());
+    return MaterialApp(home: HomeScreen());
   }
 }
