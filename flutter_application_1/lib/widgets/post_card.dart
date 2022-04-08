@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/user.dart';
 import 'package:flutter_application_1/providers/user_provider.dart';
-import 'package:flutter_application_1/screens/comments_screen.dart';
 import 'package:flutter_application_1/utils/colors.dart';
 import 'package:flutter_application_1/widgets/like_animation.dart';
 import 'package:intl/intl.dart';
@@ -176,11 +175,7 @@ class _PostCardState extends State<PostCard> {
                 ),
               ),
               IconButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => CommentsScreen(),
-                  ),
-                ),
+                onPressed: () {},
                 icon: const Icon(
                   Icons.comment_outlined,
                 ),
