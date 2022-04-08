@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/comment_web.dart';
 
 //Like Button
 class LikeButton extends StatelessWidget {
@@ -45,7 +46,7 @@ class CommentButton extends StatelessWidget {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('Comments'),
+            content: CommentWeb(),
           ),
         );
       },
