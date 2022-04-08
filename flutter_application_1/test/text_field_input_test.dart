@@ -8,7 +8,7 @@ void main(){
  testWidgets("Text Input Test", (WidgetTester tester) async{
    var hintText = "Enter your email";
    var textInputType = TextInputType.text;
-   
-   await tester.pumpWidget(TextFieldInput(textEditingController: TextEditingController(), hintText: hintText, textInputType: textInputType));
+   await tester.pumpWidget(MaterialApp(home:TextFieldInput(textEditingController: TextEditingController(), hintText: hintText, textInputType: textInputType))
+   );
  });
 } //failed test case

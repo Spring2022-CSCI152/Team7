@@ -20,5 +20,7 @@ void main() {
         ),
       )),
     );
+    final button = find.byType(ElevatedButton);
+    expect(button,findsNothing);
   });
 }
