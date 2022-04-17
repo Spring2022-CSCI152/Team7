@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/add_post_screen.dart';
+import 'package:flutter_application_1/screens/profile_screen.dart';
 import 'package:flutter_application_1/screens/search_screen.dart';
 
 import '../screens/feed_Screen.dart';
@@ -11,5 +12,5 @@ var homeScreenItems = [
   SearchScreen(),
   AddPostScreen(),
   Text('notification'),
-  Text('profile'),
+  ProfileScreen(),
 ];
