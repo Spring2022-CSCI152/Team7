@@ -1,22 +1,56 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/colors.dart';
+import 'package:flutter_application_1/utils/utils.dart';
 
 import '../widgets/follow_button.dart';
 
 class ProfileScreen extends StatefulWidget {
-  ProfileScreen({Key? key}) : super(key: key);
+  final String uid;
+  ProfileScreen({Key? key, required this.uid}) : super(key: key);
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  var userData = {};
+  int postLen = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+
+  getData() async {
+    try {
+      var userSnap = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(widget.uid)
+          .get();
+      //getting the length of post
+      var postSnap = await FirebaseFirestore.instance
+          .collection('posts')
+          .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+          .get();
+      postLen = postSnap.docs.length;
+      userData = userSnap.data()!;
+      setState(() {});
+    } catch (e) {
+      showSnackBar(e.toString(), context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
-        title: Text('username'),
+        title: Text(
+          userData['username'],
+        ),
         centerTitle: false,
       ),
       body: ListView(
@@ -30,7 +64,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     CircleAvatar(
                       backgroundColor: Colors.grey,
                       backgroundImage: NetworkImage(
-                          'https://images.unsplash.com/photo-1650109374606-ef93d8aeb429?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60'),
+                        userData['photoUrl'],
+                      ),
                       radius: 40,
                     ),
                     Expanded(
@@ -69,7 +104,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     top: 15,
                   ),
                   child: Text(
-                    'username',
+                    userData['username'],
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -81,12 +116,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     top: 1,
                   ),
                   child: Text(
-                    'description goes here',
+                    userData['bio'],
                   ),
                 ),
               ],
             ),
           ),
+          const Divider(),
         ],
       ),
     );
