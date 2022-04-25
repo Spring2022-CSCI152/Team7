@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/albums.dart';
 import 'package:flutter_application_1/utils/album_outline.dart';
+import 'package:flutter_application_1/utils/colors.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -29,7 +30,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
           elevation: 0,
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: webBackgroundColor,
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
