@@ -16,27 +16,24 @@ import 'package:provider/provider.dart';
 //WebScreenLayout
 import './responsive/web_screen_layout.dart';
 
-// void main() async {
-//   WidgetsFlutterBinding
-//       .ensureInitialized(); //makes sure flutter loads before firebase
-//   if (kIsWeb) {
-//     await Firebase.initializeApp(
-//       options: const FirebaseOptions(
-//         apiKey: "AIzaSyBejEb5oKMMLH4vT1ACjtIbioA8SvwBKzU",
-//         appId: "1:15298368232:web:583065e947f60714662f5d",
-//         messagingSenderId: "15298368232",
-//         projectId: "mepo-1bb10",
-//         storageBucket: "mepo-1bb10.appspot.com",
-//       ),
-//     );
-//   } else {
-//     await Firebase.initializeApp();
-//   }
-//   runApp(const MyApp());
-//   runApp(const WebScreenLayout());
-// }
+import './screens/profile_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding
+      .ensureInitialized(); //makes sure flutter loads before firebase
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+        apiKey: "AIzaSyBejEb5oKMMLH4vT1ACjtIbioA8SvwBKzU",
+        appId: "1:15298368232:web:583065e947f60714662f5d",
+        messagingSenderId: "15298368232",
+        projectId: "mepo-1bb10",
+        storageBucket: "mepo-1bb10.appspot.com",
+      ),
+    );
+  } else {
+    await Firebase.initializeApp();
+  }
   runApp(const MyApp());
 }
 
