@@ -2,6 +2,24 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "_fe_analyzer_shared",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-38.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "analyzer",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-3.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "args",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "async",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2",
       "packageUri": "lib/",
@@ -10,6 +28,24 @@
     {
       "name": "boolean_selector",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "build",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/build-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "built_collection",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/built_collection-5.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "built_value",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/built_value-8.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -50,8 +86,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "code_builder",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/code_builder-4.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "collection",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "convert",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/convert-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -74,14 +122,38 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "dart_style",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/dart_style-2.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "equatable",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
+      "name": "file",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "firebase_auth",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-3.3.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_auth_mocks",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_mocks-0.8.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -134,8 +206,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "fixnum",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/fixnum-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/packages/flutter",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_automation",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_automation-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -172,6 +256,48 @@
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "glob",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/glob-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "google_sign_in",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "google_sign_in_android",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_android-5.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "google_sign_in_ios",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_ios-5.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "google_sign_in_mocks",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_mocks-0.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_sign_in_platform_interface",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_platform_interface-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_sign_in_web",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.10.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -224,6 +350,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "logging",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/logging-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.11",
       "packageUri": "lib/",
@@ -242,8 +374,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "mockito",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/mockito-5.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "nested",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "package_config",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/package_config-2.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -290,8 +434,32 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "pub_semver",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/pub_semver-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "quiver",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.0.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "rxdart",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.27.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/bin/cache/pkg/sky_engine",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "source_gen",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/source_gen-1.2.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -350,10 +518,22 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "watcher",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/watcher-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "xml",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/xml-5.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "yaml",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter_application_1",
@@ -362,7 +542,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-27T00:15:03.231972Z",
+  "generated": "2022-04-27T19:48:29.308863Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }
