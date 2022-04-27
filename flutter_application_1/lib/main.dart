@@ -13,7 +13,7 @@ import 'package:provider/provider.dart';
 
 import './screens/profile_screen.dart';
 
-/*void main() async {
+void main() async {
   WidgetsFlutterBinding
       .ensureInitialized(); //makes sure flutter loads before firebase
   if (kIsWeb) {
@@ -31,11 +31,6 @@ import './screens/profile_screen.dart';
   }
   runApp(const MyApp());
 }
-*/
-
-void main() {
-  runApp(const MyApp()); 
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -43,7 +38,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    /*return MultiProvider(
+    return MultiProvider(
       providers: [
         ChangeNotifierProvider(
           create: (_) => UserProvider(),
@@ -83,9 +78,6 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
-    ); */
-    return MaterialApp(
-      home: ProfilePage(),
     );
   }
 }
