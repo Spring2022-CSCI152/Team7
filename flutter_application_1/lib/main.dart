@@ -11,6 +11,8 @@ import 'package:flutter_application_1/screens/signup_screen.dart';
 import 'package:flutter_application_1/utils/colors.dart';
 import 'package:provider/provider.dart';
 
+import './screens/profile_screen.dart';
+
 void main() async {
   WidgetsFlutterBinding
       .ensureInitialized(); //makes sure flutter loads before firebase
