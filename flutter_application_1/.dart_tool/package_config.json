@@ -152,6 +152,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_staggered_grid_view",
+      "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_staggered_grid_view-0.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_svg",
       "rootUri": "file:///usr/local/Caskroom/flutter/2.10.1/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.0.3",
       "packageUri": "lib/",
@@ -356,7 +362,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-22T17:13:39.690248Z",
+  "generated": "2022-04-27T00:15:03.231972Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }
