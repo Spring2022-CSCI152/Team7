@@ -137,6 +137,11 @@ class _WebAddPost extends State<WebAddPost> {
               title: Text("Mepo"),
               actions: <Widget>[
                 IconButton(
+                    icon: Icon(Icons.home),
+                    tooltip: 'Home Page',
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    onPressed: () {}),
+                IconButton(
                     icon: Icon(Icons.account_circle_outlined),
                     tooltip: 'Profile Page',
                     padding: EdgeInsets.symmetric(horizontal: 16),
@@ -146,11 +151,11 @@ class _WebAddPost extends State<WebAddPost> {
               bottom: PreferredSize(
                   child: Container(
                     color: blueColor,
-                    height: 4.0,
+                    height: 2.0,
                   ),
                   preferredSize: Size.fromHeight(4.0)),
             ),
-            // backgroundColor: webBackgroundColor,
+            backgroundColor: webBackgroundColor,
             body: Column(
               children: [
                 _isLoading
@@ -172,10 +177,17 @@ class _WebAddPost extends State<WebAddPost> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.45,
                       child: TextField(
+                        style: TextStyle(color: primaryColor),
                         controller: _descriptionController,
                         decoration: const InputDecoration(
+                          hintStyle: TextStyle(color: primaryColor),
                           hintText: 'Write a caption...',
-                          border: InputBorder.none,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              width: 4,
+                              color: blueColor,
+                            ),
+                          ),
                         ),
                         maxLines: 8,
                       ),
