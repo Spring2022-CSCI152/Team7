@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/responsive/web_screen_layout.dart';
 import 'package:flutter_application_1/utils/colors.dart';
@@ -34,32 +35,117 @@ class MyAddPost extends StatelessWidget {
             ),
             preferredSize: Size.fromHeight(4.0)),
       ),
+      backgroundColor: webBackgroundColor,
+
+      //Body for Add Post
       body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            color: blueColor,
-            width: 150,
-            height: 300,
+          //Image column
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 300,
+                height: 600,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    //color: secondaryColor,
+                    border: Border.all(
+                      color: blueColor,
+                      width: 4.0,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+            ],
           ),
-          Container(
-            width: 200,
-            height: 400,
-            color: blueColor,
+
+          //Just to Space out the two boxes
+          SizedBox(
+            width: 10,
+          ),
+
+          //Make Post Info
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 700,
+                height: 600,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    //color: primaryColor,
+                    border: Border.all(
+                      color: blueColor,
+                      width: 4.0,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+
+                  // Text box for Title
+
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                        top: 25.0, bottom: 15.0, left: 30.0, right: 30.0),
+                    child: Column(
+                      children: [
+                        TextField(
+                          style: TextStyle(color: primaryColor),
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: blueColor, width: 4.0),
+                            ),
+                            hintText: 'Title',
+                            hintStyle: TextStyle(color: primaryColor),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        TextField(
+                          keyboardType: TextInputType.multiline,
+                          maxLines: 10,
+                          style: TextStyle(color: primaryColor),
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: blueColor, width: 4.0),
+                            ),
+                            hintText: 'About this post',
+                            hintStyle: TextStyle(color: primaryColor),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        TextField(
+                          style: TextStyle(color: primaryColor),
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: blueColor, width: 4.0),
+                            ),
+                            hintText: 'Tags',
+                            hintStyle: TextStyle(color: primaryColor),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        FlatButton(
+                          child: Text(
+                            'Post',
+                          ),
+                          color: blueColor,
+                          textColor: primaryColor,
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
-/*
-//Trying to Make it scrollable but Code from WebScreenLayout or ListView is not allowing it.
-      body: Column(
-        children: <Widget>[
-          ListView.builder(
-              itemCount: 2,
-              itemBuilder: (BuildContext context, int index) {
-                return WebScreenLayout();
-              }),
-        ],
-      ),
-*/
     );
   }
 }
