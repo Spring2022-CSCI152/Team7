@@ -7,6 +7,7 @@ import 'package:flutter_application_1/resources/firestore_methods.dart';
 import 'package:flutter_application_1/utils/colors.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+import '../widgets/web_appbar.dart';
 
 import '../utils/utils.dart';
 
@@ -133,28 +134,7 @@ class _WebAddPost extends State<WebAddPost> {
             ),
           )
         : Scaffold(
-            appBar: AppBar(
-              title: Text("Mepo"),
-              actions: <Widget>[
-                IconButton(
-                    icon: Icon(Icons.home),
-                    tooltip: 'Home Page',
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    onPressed: () {}),
-                IconButton(
-                    icon: Icon(Icons.account_circle_outlined),
-                    tooltip: 'Profile Page',
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    onPressed: () {}),
-              ],
-              backgroundColor: webBackgroundColor,
-              bottom: PreferredSize(
-                  child: Container(
-                    color: blueColor,
-                    height: 2.0,
-                  ),
-                  preferredSize: Size.fromHeight(4.0)),
-            ),
+            appBar: webAppBar(),
             backgroundColor: webBackgroundColor,
             body: Column(
               children: [
@@ -169,44 +149,88 @@ class _WebAddPost extends State<WebAddPost> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     /*
-                    CircleAvatar(
+                    Column(
+                      children: [
+                        CircleAvatar(
                       backgroundImage: NetworkImage(
                         userProvider.getUser.photoUrl,
                       ),
-                    ),*/
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      child: TextField(
-                        style: TextStyle(color: primaryColor),
-                        controller: _descriptionController,
-                        decoration: const InputDecoration(
-                          hintStyle: TextStyle(color: primaryColor),
-                          hintText: 'Write a caption...',
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              width: 4,
-                              color: blueColor,
-                            ),
-                          ),
-                        ),
-                        maxLines: 8,
-                      ),
                     ),
-                    SizedBox(
-                      height: 45,
-                      width: 45,
-                      child: AspectRatio(
-                        aspectRatio: 487 / 451,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: MemoryImage(_file!),
-                              fit: BoxFit.fill,
-                              alignment: FractionalOffset.topCenter,
+                      ],
+                    )
+                  */
+
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              child: TextField(
+                                style: TextStyle(color: primaryColor),
+                                controller: _descriptionController,
+                                decoration: const InputDecoration(
+                                  hintStyle: TextStyle(color: primaryColor),
+                                  hintText: 'Write a caption...',
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      width: 4,
+                                      color: blueColor,
+                                    ),
+                                  ),
+                                ),
+                                maxLines: 8,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            TextButton(
+                              onPressed: () {},
+                              /*
+                         onPressed: () => postImage(
+                         userProvider.getUser.uid,
+                         userProvider.getUser.username,
+                         userProvider.getUser.photoUrl,),*/
+                              style:
+                                  ElevatedButton.styleFrom(primary: blueColor),
+                              child: const Text(
+                                'Post',
+                                style: TextStyle(
+                                  color: primaryColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: 150,
+                          width: 150,
+                          child: AspectRatio(
+                            aspectRatio: 487 / 451,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: MemoryImage(_file!),
+                                  fit: BoxFit.fill,
+                                  //alignment: FractionalOffset.center,
+                                  alignment: Alignment.center,
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
                     const Divider(),
                   ],

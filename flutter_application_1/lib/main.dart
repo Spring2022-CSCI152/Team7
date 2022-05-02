@@ -7,11 +7,14 @@ import 'package:flutter_application_1/responsive/mobile_screen_layout.dart';
 import 'package:flutter_application_1/responsive/responsive_layout_screen.dart';
 import 'package:flutter_application_1/responsive/web_screen_layout.dart';
 import 'package:flutter_application_1/screens/add_post_screen.dart';
+import 'package:flutter_application_1/screens/feed_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
+import 'package:flutter_application_1/screens/search_screen.dart';
 import 'package:flutter_application_1/screens/signup_screen.dart';
-import 'package:flutter_application_1/screens/home_screen.dart';
+import 'package:flutter_application_1/screens/web_feed_screen.dart';
 import 'package:flutter_application_1/screens/web_add_post_screen.dart';
 import 'package:flutter_application_1/utils/colors.dart';
+import 'package:flutter_application_1/widgets/web_appbar.dart';
 import 'package:provider/provider.dart';
 //WebScreenLayout
 import './responsive/web_screen_layout.dart';
@@ -84,6 +87,6 @@ class MyApp extends StatelessWidget {
     //     ),
     //   ),
     // );
-    return MaterialApp(home: WebAddPost());
+    return MaterialApp(home: SearchScreen());
   }
 }
