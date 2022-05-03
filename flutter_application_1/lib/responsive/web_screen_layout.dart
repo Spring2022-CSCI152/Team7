@@ -1,123 +1,98 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../utils/colors.dart';
-import '../widgets/post_buttons.dart';
+import 'package:flutter_application_1/utils/colors.dart';
+import 'package:flutter_application_1/utils/global_variables.dart';
+import 'package:flutter_svg/svg.dart';
 
-class WebScreenLayout extends StatelessWidget {
+class WebScreenLayout extends StatefulWidget {
   const WebScreenLayout({Key? key}) : super(key: key);
+
+  @override
+  State<WebScreenLayout> createState() => _WebScreenLayoutState();
+}
+
+class _WebScreenLayoutState extends State<WebScreenLayout> {
+  int _page = 0;
+  late PageController pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    pageController.dispose();
+  }
+
+  void navigationTapped(int page) {
+    pageController.jumpToPage(page);
+    setState(() {
+      _page = page;
+    });
+  }
+
+  void onPageChanged(int page) {
+    setState(() {
+      _page = page;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.blue,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Container(
-            //   color: Color.fromARGB(171, 18, 100, 100),
-            //   child: Column(
-            //     children: [
-            //       SvgPicture.asset(
-            //         'assets/logo.svg',
-            //         color: homeColor,
-            //         height: 64,
-            //       ),
-            //       Text('This is web'),
-            //     ],
-            //   ),
-            // ),
-            Column(
-              children: [
-                Container(
-                  width: 500.0,
-                  height: 600.0,
-                  color: Colors.black38,
-                  padding: EdgeInsets.all(25.0),
-                  margin: EdgeInsets.all(60.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        children: [
-                          Container(
-                            width: 450.0,
-                            height: 300.0,
-                            color: Colors.white10,
-                            //margin: EdgeInsets.all(60.0),
-                          ),
-                          Container(
-                            width: 450.0,
-                            height: 230.0,
-                            color: Colors.white10,
-                            margin: EdgeInsets.only(top: 20.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 80,
-                                  color: Colors.white, //delete later
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.all(20),
-                                        padding: EdgeInsets.all(10),
-                                        color:
-                                            Color.fromARGB(146, 68, 137, 255),
-                                        child: LikeButton(),
-                                      ),
-                                      Container(
-                                        margin:
-                                            EdgeInsets.fromLTRB(0, 20, 20, 20),
-                                        padding: EdgeInsets.all(10),
-                                        color:
-                                            Color.fromARGB(146, 68, 137, 255),
-                                        child: CommentButton(),
-                                      ),
-                                      Spacer(),
-                                      Container(
-                                        margin: EdgeInsets.all(20),
-                                        //padding: EdgeInsets.all(10),
-                                        color:
-                                            Color.fromARGB(146, 68, 137, 255),
-                                        child: SettingsButton(),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  height: 150,
-                                  padding: EdgeInsets.all(10),
-                                  color: Colors.grey, //delete later
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        child: SingleChildScrollView(
-                                          scrollDirection: Axis.vertical,
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(
-                                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
+      appBar: AppBar(
+        backgroundColor: mobileBackgroundColor,
+        centerTitle: false,
+        title: SvgPicture.asset(
+          'assets/logo.svg',
+          color: primaryColor,
+          height: 32,
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.home,
+              color: _page == 0 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(0),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              color: _page == 1 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(1),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.add_a_photo,
+              color: _page == 2 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(2),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.favorite,
+              color: _page == 3 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(3),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.person,
+              color: _page == 4 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(4),
+          ),
+        ],
+      ),
+      body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
+        children: homeScreenItems,
+        controller: pageController,
+        onPageChanged: onPageChanged,
       ),
     );
   }

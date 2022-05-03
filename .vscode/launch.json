@@ -8,7 +8,8 @@
       "name": "flutter_application_1",
       "cwd": "flutter_application_1",
       "request": "launch",
-      "type": "dart"
+      "type": "dart",
+      "args": ["--web-renderer", "html"]
     },
     {
       "name": "flutter_application_1 (profile mode)",
