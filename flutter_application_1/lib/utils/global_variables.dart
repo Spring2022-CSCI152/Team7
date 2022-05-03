@@ -6,7 +6,7 @@ import 'package:flutter_application_1/screens/search_screen.dart';
 
 import '../screens/feed_Screen.dart';
 
-const WebScreenSize = 600;
+const webScreenSize = 600;
 
 var homeScreenItems = [
   FeedScreen(),
