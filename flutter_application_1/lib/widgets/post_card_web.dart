@@ -5,6 +5,8 @@ import 'package:flutter_application_1/providers/user_provider.dart';
 import 'package:flutter_application_1/screens/comments_screen.dart';
 import 'package:flutter_application_1/utils/colors.dart';
 import 'package:flutter_application_1/utils/utils.dart';
+import 'package:flutter_application_1/widgets/comment_card.dart';
+import 'package:flutter_application_1/widgets/comment_web.dart';
 import 'package:flutter_application_1/widgets/like_animation.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -75,7 +77,7 @@ class _PostCardState extends State<PostCardWeb> {
                   topLeft: const Radius.circular(10.0),
                   topRight: const Radius.circular(10.0),
                 ),
-                color: Colors.yellow,
+                color: Color.fromARGB(33, 255, 254, 254),
               ),
               // Profile picture and settings button
               child: Row(
@@ -145,128 +147,110 @@ class _PostCardState extends State<PostCardWeb> {
                 ],
               ),
             ),
-            // //Image Section
-            // GestureDetector(
-            //   //like Inkwell but more animation features
-            //   onDoubleTap: () async {
-            //     await FirestoreMethods().likePost(
-            //       widget.snap['postId'],
-            //       user.uid,
-            //       widget.snap['likes'],
-            //     );
-            //     setState(() {
-            //       isLikeAnimating = true;
-            //     });
-            //   },
-            //   child: Stack(
-            //     alignment: Alignment.center,
-            //     children: [
-            //       SizedBox(
-            //         // height: MediaQuery.of(context).size.height * 0.35,
-            //         // width: double.infinity,
-            //         height: 450,
-            //         child: Image.network(
-            //           widget.snap['postUrl'],
-            //           // fit: BoxFit.cover,
-            //         ),
-            //       ),
-            //       // AnimatedOpacity(
-            //       //   //to make sure the like animation only shows up when true
-            //       //   duration: const Duration(
-            //       //     milliseconds: 200,
-            //       //   ),
-            //       //   opacity: isLikeAnimating ? 1 : 0,
-            //       //   child: LikeAnimation(
-            //       //     child: const Icon(
-            //       //       Icons.favorite,
-            //       //       color: Colors.white,
-            //       //       size: 120,
-            //       //     ),
-            //       //     isAnimating: isLikeAnimating,
-            //       //     duration: const Duration(
-            //       //       milliseconds: 400,
-            //       //     ),
-            //       //     onEnd: () {
-            //       //       setState(() {
-            //       //         isLikeAnimating = false;
-            //       //       });
-            //       //     },
-            //       //   ),
-            //       // )
-            //     ],
-            //   ),
-            // ),
-
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                SizedBox(
-                  // height: MediaQuery.of(context).size.height * 0.35,
-                  // width: double.infinity,
-                  height: 450,
-                  child: Image.network(
-                    widget.snap['postUrl'],
-                    fit: BoxFit.cover,
+            //Image Section
+            GestureDetector(
+              //like Inkwell but more animation features
+              onDoubleTap: () async {
+                await FirestoreMethods().likePost(
+                  widget.snap['postId'],
+                  user.uid,
+                  widget.snap['likes'],
+                );
+                setState(() {
+                  isLikeAnimating = true;
+                });
+              },
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  SizedBox(
+                    // height: MediaQuery.of(context).size.height * 0.35,
+                    // width: double.infinity,
+                    height: 450,
+                    child: Image.network(
+                      widget.snap['postUrl'],
+                      // fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-              ],
+                  AnimatedOpacity(
+                    //to make sure the like animation only shows up when true
+                    duration: const Duration(
+                      milliseconds: 200,
+                    ),
+                    opacity: isLikeAnimating ? 1 : 0,
+                    child: LikeAnimation(
+                      child: const Icon(
+                        Icons.favorite,
+                        color: Colors.white,
+                        size: 120,
+                      ),
+                      isAnimating: isLikeAnimating,
+                      duration: const Duration(
+                        milliseconds: 400,
+                      ),
+                      onEnd: () {
+                        setState(() {
+                          isLikeAnimating = false;
+                        });
+                      },
+                    ),
+                  )
+                ],
+              ),
             ),
 
             //Like Comment section
-            Container(
-              width: 650,
-              child: Row(
-                children: [
-                  LikeAnimation(
-                    isAnimating: widget.snap['likes'].contains(user.uid),
-                    smallLike: true,
+            Row(
+              children: [
+                LikeAnimation(
+                  isAnimating: widget.snap['likes'].contains(user.uid),
+                  smallLike: true,
+                  child: IconButton(
+                    onPressed: () async {
+                      await FirestoreMethods().likePost(
+                        widget.snap['postId'],
+                        user.uid,
+                        widget.snap['likes'],
+                      );
+                    },
+                    icon: widget.snap['likes'].contains(user.uid)
+                        ? const Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          )
+                        : const Icon(
+                            Icons.favorite_border,
+                          ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => CommentsScreen(
+                        snap: widget.snap,
+                      ),
+                    ),
+                  ),
+                  icon: const Icon(
+                    Icons.comment_outlined,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.send,
+                  ),
+                ),
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.bottomRight,
                     child: IconButton(
-                      onPressed: () async {
-                        await FirestoreMethods().likePost(
-                          widget.snap['postId'],
-                          user.uid,
-                          widget.snap['likes'],
-                        );
-                      },
-                      icon: widget.snap['likes'].contains(user.uid)
-                          ? const Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                            )
-                          : const Icon(
-                              Icons.favorite_border,
-                            ),
+                      icon: const Icon(Icons.bookmark_border_outlined),
+                      onPressed: () {},
                     ),
                   ),
-                  IconButton(
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => CommentsScreen(
-                          snap: widget.snap,
-                        ),
-                      ),
-                    ),
-                    icon: const Icon(
-                      Icons.comment_outlined,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.send,
-                    ),
-                  ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: IconButton(
-                        icon: const Icon(Icons.bookmark_border_outlined),
-                        onPressed: () {},
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
 
             // Description and Comments

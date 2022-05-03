@@ -25,34 +25,34 @@ class LikeButton extends StatelessWidget {
 }
 
 //Comment Button
-class CommentButton extends StatelessWidget {
-  const CommentButton({Key? key}) : super(key: key);
+// class CommentButton extends StatelessWidget {
+//   const CommentButton({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      style: TextButton.styleFrom(
-        primary: Colors.black,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(Icons.comment_outlined),
-          SizedBox(width: 10.0),
-          Text('Comment'),
-        ],
-      ),
-      onPressed: () {
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            content: CommentWeb(),
-          ),
-        );
-      },
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return TextButton(
+//       style: TextButton.styleFrom(
+//         primary: Colors.black,
+//       ),
+//       child: Row(
+//         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//         children: [
+//           Icon(Icons.comment_outlined),
+//           SizedBox(width: 10.0),
+//           Text('Comment'),
+//         ],
+//       ),
+//       onPressed: () {
+//         showDialog(
+//           context: context,
+//           builder: (context) => AlertDialog(
+//             content: CommentWeb(),
+//           ),
+//         );
+//       },
+//     );
+//   }
+// }
 
 //Settings Button
 class SettingsButton extends StatelessWidget {
