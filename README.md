@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Spring2022-CSCI152/Team7">
-    <img src="images/logo.jpg" alt="Logo" width="300" height="200">
+    <img src="flutter_application_1/assets/images/logo.jpg" alt="Logo" width="300" height="200">
   </a>
 
 <h3 align="center">Mepo</h3>
