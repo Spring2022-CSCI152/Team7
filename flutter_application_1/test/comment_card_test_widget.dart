@@ -5,7 +5,15 @@ import 'package:flutter_test/flutter_test.dart';
 
 
 void main() {
-  testWidgets('description', (WidgetTester tester) async {
-    await tester.pumpWidget(CommentCard(snap: "profilePic"));
+  testWidgets('Comment Card', (WidgetTester tester) async {
+    String text = "Marcos";
+    await tester.pumpWidget(
+      MaterialApp(
+        home: CommentCard(
+          snap: text
+          )
+      ),
+    );
+      expect(find.text("Marcos"), CommentCard);
   });
 }
