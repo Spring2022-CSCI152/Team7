@@ -1,9 +1,7 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/utils/global_variables.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/utils/colors.dart';
+import 'package:flutter_application_1/utils/global_variables.dart';
+import 'package:flutter_svg/svg.dart';
 
 class WebScreenLayout extends StatefulWidget {
   const WebScreenLayout({Key? key}) : super(key: key);
@@ -30,6 +28,9 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
 
   void navigationTapped(int page) {
     pageController.jumpToPage(page);
+    setState(() {
+      _page = page;
+    });
   }
 
   void onPageChanged(int page) {
@@ -41,57 +42,57 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: mobileBackgroundColor,
+        centerTitle: false,
+        title: SvgPicture.asset(
+          'assets/logo.svg',
+          color: primaryColor,
+          height: 32,
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.home,
+              color: _page == 0 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(0),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              color: _page == 1 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(1),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.add_a_photo,
+              color: _page == 2 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(2),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.favorite,
+              color: _page == 3 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(3),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.person,
+              color: _page == 4 ? primaryColor : secondaryColor,
+            ),
+            onPressed: () => navigationTapped(4),
+          ),
+        ],
+      ),
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         children: homeScreenItems,
         controller: pageController,
         onPageChanged: onPageChanged,
-      ),
-      bottomNavigationBar: CupertinoTabBar(
-        backgroundColor: mobileBackgroundColor,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: (_page == 0) ? primaryColor : secondaryColor,
-            ),
-            label: '',
-            backgroundColor: primaryColor,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: (_page == 1) ? primaryColor : secondaryColor,
-            ),
-            label: '',
-            backgroundColor: primaryColor,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.add_circle,
-              color: (_page == 2) ? primaryColor : secondaryColor,
-            ),
-            label: '',
-            backgroundColor: primaryColor,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite,
-              color: (_page == 3) ? primaryColor : secondaryColor,
-            ),
-            label: '',
-            backgroundColor: primaryColor,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: (_page == 4) ? primaryColor : secondaryColor,
-            ),
-            label: '',
-            backgroundColor: primaryColor,
-          ),
-        ],
-        onTap: navigationTapped,
-        currentIndex: _page,
       ),
     );
   }
