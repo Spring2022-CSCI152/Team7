@@ -13,6 +13,6 @@ void main() {
             textEditingController: TextEditingController(),
             hintText: hintText,
             textInputType: textInputType)));
-  expect(find.text("Enter your email"), findsNothing);
+    expect(find.text("Enter your email"), findsNothing);
   });
 }
